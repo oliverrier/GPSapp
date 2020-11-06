@@ -5,14 +5,18 @@ import {
     IonTitle,
     IonToolbar,
 } from '@ionic/react';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Profile.scss';
 import DetailsProfile from '../components/DetailsProfile'
+import AppContext from '../data/app-context';
+
 const Profile: React.FC = () => {
-    const [pseudo, setPseudo] = useState<string>('pseudo');
+    const appCtx = useContext(AppContext)
 
     const updateUsername = (newUsername: string) => {
-        setPseudo(newUsername)
+        let updatedUser = { ...appCtx.user }
+        updatedUser.name = newUsername;
+        appCtx.updateUser(updatedUser);
     }
 
     return (
@@ -25,7 +29,7 @@ const Profile: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent>
-                <DetailsProfile pseudo={pseudo} lastLatitude={12.56} lastLongitude={56.23} updateUsername={updateUsername}></DetailsProfile>
+                <DetailsProfile pseudo={appCtx.user.name} lastLatitude={12.56} lastLongitude={56.23} updateUsername={updateUsername}></DetailsProfile>
             </IonContent >
         </IonPage >
     );
