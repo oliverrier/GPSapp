@@ -31,7 +31,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     appCtx.initContext();
-  })
+  }, [])
 
   return (
   <IonApp>
