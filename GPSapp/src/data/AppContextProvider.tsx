@@ -12,13 +12,11 @@ const AppContextProvider : React.FC = (props) => {
     
     useEffect(() => {
         if(didMountRef.current){
-            console.log("didmout true")
             Storage.set({key: 'user', value: JSON.stringify(user)})
         }else{
-            console.log("didmout false")
             didMountRef.current = true
         }
-    }), [user]
+    }, [user])
     
     const updateUser = (updateUser: User) => {
         setUser(updateUser);
