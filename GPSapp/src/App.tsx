@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import {
-  IonApp,
+  IonApp
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 
@@ -23,14 +23,25 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import Tabs from './nav/Tabs';
+import AppContext from './data/app-context';
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+
+  const appCtx = useContext(AppContext);
+
+  useEffect(() => {
+    appCtx.initContext();
+  }, [])
+
+  return (
   <IonApp>
     <IonReactRouter>
       <Tabs>
       </Tabs>
     </IonReactRouter>
   </IonApp>
-);
+  )
+}
+
 
 export default App;
