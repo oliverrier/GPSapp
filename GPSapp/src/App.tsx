@@ -24,6 +24,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import Tabs from './nav/Tabs';
 import AppContext from './data/app-context';
+import { Redirect } from 'react-router';
 
 const App: React.FC = () => {
 
@@ -36,6 +37,7 @@ const App: React.FC = () => {
   return (
     <IonApp>
       <IonReactRouter>
+        <Redirect path="/" exact to={"/tabs/live-position/"} />
         <Tabs>
         </Tabs>
       </IonReactRouter>
