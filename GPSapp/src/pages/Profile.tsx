@@ -5,7 +5,7 @@ import {
     IonTitle,
     IonToolbar,
 } from '@ionic/react';
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import './Profile.scss';
 import DetailsProfile from '../components/DetailsProfile'
 import AppContext from '../data/app-context';
