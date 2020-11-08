@@ -12,13 +12,13 @@ const Details: React.FC<{ pseudo: String; lastLatitude: Number; lastLongitude: N
                     <IonCol sizeMd={"6"} offsetMd={"3"}>
                         <IonList className="ion-padding">
                             <IonItem>
-                                <IonLabel onClick={() => setShowAlert(true)}><b>Username</b> <span className="is-fade ion-float-right">{props.pseudo}</span></IonLabel>
+                                <IonLabel onClick={() => setShowAlert(true)}><b>Username</b> <span className="is-grey ion-float-right">{props.pseudo}</span></IonLabel>
                             </IonItem>
                             <IonItem>
-                                <IonLabel ><b>Last latitude</b> <span className="is-fade ion-float-right">{props.lastLatitude}</span></IonLabel>
+                                <IonLabel ><b>Last latitude</b> <span className="is-grey ion-float-right">{props.lastLatitude}</span></IonLabel>
                             </IonItem>
                             <IonItem>
-                                <IonLabel ><b>Last longitude:</b> <span className="is-fade ion-float-right">{props.lastLongitude}</span></IonLabel>
+                                <IonLabel ><b>Last longitude:</b> <span className="is-grey ion-float-right">{props.lastLongitude}</span></IonLabel>
                             </IonItem>
                         </IonList>
                     </IonCol>
