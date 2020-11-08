@@ -34,12 +34,12 @@ const App: React.FC = () => {
   }, [])
 
   return (
-  <IonApp>
-    <IonReactRouter>
-      <Tabs>
-      </Tabs>
-    </IonReactRouter>
-  </IonApp>
+    <IonApp>
+      <IonReactRouter>
+        <Tabs>
+        </Tabs>
+      </IonReactRouter>
+    </IonApp>
   )
 }
 
