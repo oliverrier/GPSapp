@@ -1,4 +1,4 @@
-import { IonItem, IonLabel, IonList, IonAlert } from '@ionic/react';
+import { IonItem, IonLabel, IonList, IonAlert, IonGrid, IonRow, IonCol } from '@ionic/react';
 
 import React, { useState } from 'react';
 
@@ -7,21 +7,29 @@ const Details: React.FC<{ pseudo: String; lastLatitude: Number; lastLongitude: N
 
     return (
         <div>
-            <IonList className="ion-padding">
-                <IonItem>
-                    <IonLabel onClick={() => setShowAlert(true)}><b>Username</b> <span className="is-fade ion-float-right">{props.pseudo}</span></IonLabel>
-                </IonItem>
-                <IonItem>
-                    <IonLabel ><b>Last latitude</b> <span className="is-fade ion-float-right">{props.lastLatitude}</span></IonLabel>
-                </IonItem>
-                <IonItem>
-                    <IonLabel ><b>Last longitude:</b> <span className="is-fade ion-float-right">{props.lastLongitude}</span></IonLabel>
-                </IonItem>
-            </IonList>
+            <IonGrid>
+                <IonRow>
+                    <IonCol sizeMd={"6"} offsetMd={"3"}>
+                        <IonList className="ion-padding">
+                            <IonItem>
+                                <IonLabel onClick={() => setShowAlert(true)}><b>Username</b> <span className="is-fade ion-float-right">{props.pseudo}</span></IonLabel>
+                            </IonItem>
+                            <IonItem>
+                                <IonLabel ><b>Last latitude</b> <span className="is-fade ion-float-right">{props.lastLatitude}</span></IonLabel>
+                            </IonItem>
+                            <IonItem>
+                                <IonLabel ><b>Last longitude:</b> <span className="is-fade ion-float-right">{props.lastLongitude}</span></IonLabel>
+                            </IonItem>
+                        </IonList>
+                    </IonCol>
+                </IonRow>
+            </IonGrid>
+            
             <IonAlert
                 isOpen={showAlert}
                 onDidDismiss={() => setShowAlert(false)}
                 header={'Username'}
+                mode={'ios'}
                 inputs={[
                     {
                         name: 'usernameInput',

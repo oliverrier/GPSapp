@@ -23,13 +23,13 @@ const Profile: React.FC = () => {
         <IonPage id="Profile">
             <IonHeader>
                 <IonToolbar color='primary'>
-                    <IonTitle>
+                    <IonTitle className="ion-text-center ion-text-md-left">
                         Profile
                 </IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>
-                <DetailsProfile pseudo={appCtx.user.name} lastLatitude={12.56} lastLongitude={56.23} updateUsername={updateUsername}></DetailsProfile>
+                <DetailsProfile pseudo={appCtx.user.name} lastLatitude={appCtx.position.latitude} lastLongitude={appCtx.position.longitude} updateUsername={updateUsername}></DetailsProfile>
             </IonContent >
         </IonPage >
     );
